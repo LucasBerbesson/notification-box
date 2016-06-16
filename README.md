@@ -1,7 +1,7 @@
 # notification-box
 This is the python code used in this video : 
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/Uv6EkKaG8wQ/0.jpg)](https://www.youtube.com/watch?v=Uv6EkKaG8wQ)
+https://www.youtube.com/watch?v=v2XymfjZn1k
 
 If you want to run it. 
 
