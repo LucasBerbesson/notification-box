@@ -18,7 +18,8 @@ Go inside the notification folder
 ```
 cd notification-box
 ```
-Update the variables inside the file with your API credentials 
+Update the variables inside the file with your API credentials. You can use nano or vim to edit the file. 
+You can also control the Refresh time of the box, the GPIO you want to use...
 ```
 nano notify.py
 ```
