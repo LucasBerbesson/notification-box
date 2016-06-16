@@ -18,6 +18,8 @@ FACEBOOK_PAGE_URL = "XXXXXXXXXXXXXXXXXXXXXX"
 
 # Time in seconds between two requests
 REFRESH_TIME = 1
+# Make a special sound every 100 followers
+APPLAUSE_THRESHOLD = 100
 # Raspberry GPIO where the RED pin of your LED strip is connected
 RED_PIN = 9
 # Raspberry GPIO where the GREEN pin of your LED strip is connected
@@ -52,15 +54,24 @@ while True:
 
     if new_likes - likes > 0:
         blue = 1
-        subprocess.call(["sudo", "omxplayer", "blop.wav"])
+        if new_likes % APPLAUSE_THRESHOLD == 0:
+            subprocess.call(["sudo", "omxplayer", "applause.wav"])
+        else:
+            subprocess.call(["sudo", "omxplayer", "blop.wav"])
         sleep(0.1)
     if new_subscribers - subscribers > 0:
         red = 1
-        subprocess.call(["sudo", "omxplayer", "blop.wav"])
+        if new_subscribers % APPLAUSE_THRESHOLD == 0:
+            subprocess.call(["sudo", "omxplayer", "applause.wav"])
+        else:
+            subprocess.call(["sudo", "omxplayer", "blop.wav"])
         sleep(0.1)
     if new_followers - followers > 0:
         green = 1
-        subprocess.call(["sudo", "omxplayer", "blop.wav"])
+        if new_followers % APPLAUSE_THRESHOLD == 0:
+            subprocess.call(["sudo", "omxplayer", "applause.wav"])
+        else:
+            subprocess.call(["sudo", "omxplayer", "blop.wav"])
         sleep(0.1)
     led.color = (red, green, blue)
     sleep(1)
